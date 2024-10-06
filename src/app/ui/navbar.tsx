@@ -48,7 +48,7 @@ export const Navbar = () => {
     ]
   return (
     <div className='w-screen md:w-[280px] max-h-screen overflow-hidden from-blue-400 to-blue-700 bg-gradient-to-t fixed top-0 left-0 md:p-4 flex flex-col items-center justify-around z-50'>
-        <div className="relative w-full">
+        <div className="relative w-full h-screen">
             <div className='font-bold text-[24px] text-blue-200 py-6 px-3 md:mb-2 flex flex-row items-center w-full'><BackIcon className='icon mr-2' width='22' height='22'/>BlueFrost Global Limited</div>
             {username.map((user, id)=>(
                 <div className="flex flex-row items-left px-5 w-full py-6 border border-y-blue-400 border-x-transparent" key={id}>
