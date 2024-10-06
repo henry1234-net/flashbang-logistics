@@ -5,6 +5,7 @@ import Link from 'next/link'
 import clsx from 'clsx'
 import { usePathname } from 'next/navigation'
 import BackIcon from '../../../public/svg/backIcon'
+import { useState } from 'react'
 
 export const Navbar = () => {
     const pathname = usePathname();
@@ -46,10 +47,19 @@ export const Navbar = () => {
             link: "/reports"
         }
     ]
+
+    const [close, setClose] = useState(false);
+
+    const handleClick = () => {
+        setClose(true);
+    }
   return (
-    <div className='w-screen md:w-[280px] max-h-screen overflow-hidden from-blue-400 to-blue-700 bg-gradient-to-t fixed top-0 left-0 md:p-4 flex flex-col items-center justify-around z-50'>
+    <div className={`w-screen md:w-[280px] max-h-screen overflow-hidden from-blue-400 to-blue-700 bg-gradient-to-t fixed top-0 md:p-4 flex flex-col items-center justify-around z-50`} style={{ left: close ? '-100%' : '0' }}>
         <div className="relative w-full h-screen">
-            <div className='font-bold text-[24px] text-blue-200 py-6 px-3 md:mb-2 flex flex-row items-center w-full'><BackIcon className='icon mr-2' width='22' height='22'/>BlueFrost Global Limited</div>
+            <div className='font-bold text-[24px] text-blue-200 py-6 px-3 md:mb-2 flex flex-row items-center w-full'>
+                <button onClick={handleClick}><BackIcon className='icon mr-2' width='22' height='22'/></button>
+                BlueFrost Global Limited
+            </div>
             {username.map((user, id)=>(
                 <div className="flex flex-row items-left px-5 w-full py-6 border border-y-blue-400 border-x-transparent" key={id}>
                     <Image
