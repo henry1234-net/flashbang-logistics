@@ -2,14 +2,59 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <div>
-        <span> Flashbang Logistics Delivery Tracker </span>
-        <ul className="flex flex-col md:flex-row items-center justify-center process-container">
-          <li className="process-one">Order confirmed</li>
-          <li className="process-two">On the way</li>
-          <li className="process-three">Delivered</li>
-        </ul>
+    <div className="w-screen md:w-full h-full flex flex-col place-items-center md:p-4 ">
+      <span className="font-semibold text-2xl"> Logistics Delivery Management </span>
+      <div className="flex flex-col md:flex-row">
+        <div className="flex flex-col w-1/2">
+          <ul className="process-container">
+            <li>
+              <i className="icon"></i>
+              <div className="process one active">
+              1 
+              </div>
+              Order confirmed 
+            </li>
+            <li>
+              <i className="icon"></i>
+              <div className="process two">
+              2  
+              </div>
+              On the way
+            </li>
+            <li>
+              <i className="icon"></i>
+              <div className="process three">
+              3 
+              </div>
+              Delivered
+            </li>
+          </ul>
+        </div>
+        <div className="flex flex-col w-1/2">
+          <ul className="process-container">
+            <li>
+              <i className="icon"></i>
+              <div className="process one active">
+              1 
+              </div>
+              Order confirmed 
+            </li>
+            <li>
+              <i className="icon"></i>
+              <div className="process two">
+              2  
+              </div>
+              On the way
+            </li>
+            <li>
+              <i className="icon"></i>
+              <div className="process three">
+              3 
+              </div>
+              Delivered
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );
