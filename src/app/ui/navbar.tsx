@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
 import { usePathname } from 'next/navigation'
+import BackIcon from '../../../public/svg/backIcon'
 
 export const Navbar = () => {
     const pathname = usePathname();
@@ -46,11 +47,11 @@ export const Navbar = () => {
         }
     ]
   return (
-    <div className='w-screen md:w-[280px] h-screen overflow-hidden bg-blue-500 fixed md:p-4 flex flex-col place-items-center z-50'>
-        <div className="relative h-full w-full px-5">
-            <div className='font-bold text-2xl text-blue-200 py-6 md:mb-2'>BlueFrost Global Limited</div>
+    <div className='w-screen md:w-[280px] h-screen overflow-hidden from-blue-400 to-blue-600 bg-gradient-to-t fixed md:p-4 flex flex-col items-center justify-between z-50'>
+        <div className="relative h-full w-full">
+            <div className='font-bold text-[24px] text-blue-200 py-6 px-3 md:mb-2 flex flex-row items-center w-full'><BackIcon className='icon mr-2' width='22' height='22'/>BlueFrost Global Limited</div>
             {username.map((user, id)=>(
-                <div className="grid grid-flow-col place-items-center w-full py-6 border border-y-blue-400 border-x-transparent" key={id}>
+                <div className="flex flex-row items-left px-5 w-full py-6 border border-y-blue-400 border-x-transparent" key={id}>
                     <Image
                         src='/profile.jpg'
                         alt='user-profile-pic'
@@ -58,26 +59,26 @@ export const Navbar = () => {
                         height={60}
                         className='rounded-full'
                     />
-                    <div className='flex flex-col text-white/80 text-lg'>
+                    <div className='flex flex-col text-white/80 text-lg ml-4'>
                         <span className='font-bold font-poppins'>{user.name}</span>
                         <span className='text-sm'>{user.email}</span>
                     </div>
                 </div>
             ))}
-            <div className='flex flex-col items-start w-full py-3'>
+            <div className='flex flex-col items-start w-full py-3 px-5'>
                 {
                     navbar.map((nav)=>{
                         return(
                         <Link href={nav.link} key={nav.name} className={clsx('p-2 rounded-sm font-medium text-white/80 w-full hover:bg-blue-200 hover:cursor-pointer hover:text-blue-500 text-lg',
                         {
-                            'bg-blue-200 text-blue-500': pathname === nav.link,
+                            ' bg-blue-300 text-blue-500': pathname === nav.link,
                         },)}>{nav.name}</Link>
                         )
                     })
                 }
-                <div className='my-3 p-1 w-full text-center text-red-500 border border-red-500 hover:cursor-pointer hover:bg-red-500 hover:text-white/80 bg-red-300/50 backdrop:blur-lg rounded-sm absolute bottom-3'>Logout</div>
             </div>
         </div>
+        <div className='my-3 p-1 w-[90%] text-center text-red-500 border border-red-500 hover:cursor-pointer hover:bg-red-500 hover:text-white/80 bg-red-300/70 backdrop:blur-lg rounded-sm'>Logout</div>
     </div>
   )
 }
