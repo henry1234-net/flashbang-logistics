@@ -46,7 +46,7 @@ export const Navbar = () => {
         }
     ]
   return (
-    <div className='w-screen md:w-[280px] h-screen overflow-hidden bg-blue-500 md:fixed md:p-4 flex flex-col place-items-center z-50'>
+    <div className='w-screen md:w-[280px] h-screen overflow-hidden bg-blue-500 fixed md:p-4 flex flex-col place-items-center z-50'>
         <div className="relative h-full">
             <div className='font-bold text-2xl text-blue-200 py-6 md:mb-2'>BlueFrost Global Limited</div>
             {username.map((user, id)=>(
