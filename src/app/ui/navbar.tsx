@@ -4,7 +4,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
 import { usePathname } from 'next/navigation'
-import { link } from 'fs'
 
 export const Navbar = () => {
     const pathname = usePathname();
@@ -49,7 +48,7 @@ export const Navbar = () => {
   return (
     <div className='w-screen md:w-[280px] h-screen overflow-hidden bg-blue-500 md:fixed md:p-4 flex flex-col place-items-center z-50'>
         <div className="relative h-full">
-            <div className='font-bold text-2xl text-green-200 py-6 md:mb-2'>BlueFrost Global Limited</div>
+            <div className='font-bold text-2xl text-blue-200 py-6 md:mb-2'>BlueFrost Global Limited</div>
             {username.map((user, id)=>(
                 <div className="grid grid-flow-col place-items-center w-full py-6 border border-y-blue-400 border-x-transparent" key={id}>
                     <Image
@@ -59,7 +58,7 @@ export const Navbar = () => {
                         height={60}
                         className='rounded-full'
                     />
-                    <div className='flex flex-col px-2 text-white/80'>
+                    <div className='flex flex-col text-white/80 text-lg'>
                         <span className='font-bold font-poppins'>{user.name}</span>
                         <span className='text-sm'>{user.email}</span>
                     </div>
@@ -69,9 +68,9 @@ export const Navbar = () => {
                 {
                     navbar.map((nav)=>{
                         return(
-                        <Link href={nav.link} key={nav.name} className={clsx('p-2 rounded-sm font-medium text-white/80 w-full hover:bg-green-200 hover:cursor-pointer hover:text-blue-500 text-lg',
+                        <Link href={nav.link} key={nav.name} className={clsx('p-2 rounded-sm font-medium text-white/80 w-full hover:bg-blue-200 hover:cursor-pointer hover:text-blue-500 text-lg',
                         {
-                            'bg-blue-500 text-white/80': pathname === nav.link,
+                            'bg-blue-200 text-blue-500': pathname === nav.link,
                         },)}>{nav.name}</Link>
                         )
                     })
