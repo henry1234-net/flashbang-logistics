@@ -2,7 +2,7 @@
 
 export default function Home() {
   return (
-    <div className="w-screen md:w-full h-screen overflow-hidden flex flex-col place-items-center md:p-4 ">
+    <div className="w-screen md:w-full h-screen overflow-x-hidden overflow-y-scroll flex flex-col place-items-center md:p-4 ">
       <span className="font-semibold text-2xl"> Logistics Delivery Management </span>
       <div className="flex flex-col md:flex-row">
         <div className="flex flex-col w-1/2">
